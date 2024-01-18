@@ -25,3 +25,77 @@ async function fetchAllBooks({ oldBooks, newBooks }) {
   const data = await response.json();
   return data;
 }
+
+export async function createBook(bookData) {
+  try {
+    const token = localStorage.getItem("token");
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${token}`);
+    myHeaders.append("Content-Type", "application/json");
+    const raw = JSON.stringify(bookData);
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_HOSTNAME}/books/create`,
+      requestOptions
+    );
+    if (response.status === 400) {
+      console.log("re login required");
+      return { success: false, status: response.status };
+    }
+    if (response.status !== 200) {
+      return { success: false, status: response.status };
+    }
+    const data = await response.json();
+    return { success: true, data };
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export const getBookById = async ({ params }) => {
+  console.log(params);
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_HOSTNAME}/books/${params.bookId}`
+    );
+    if (response.status !== 200) {
+      return { success: false };
+    }
+    const data = await response.json();
+    return { success: true, data };
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+export async function deleteBookById(id) {
+  try {
+    const token = localStorage.getItem("token");
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${token}`);
+    const requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      // redirect: "follow",
+    };
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_HOSTNAME}/books/${id}`,
+      requestOptions
+    );
+    if (response.status !== 200) {
+      return { success: false };
+    }
+    const data = await response.json();
+    return { success: true, data, status: response.status };
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}

@@ -5,10 +5,11 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import DashboardPage from "./Pages/DashboardPage";
 import BookPage from "./Pages/BookPage";
-import { getAllBooks } from "./utils/loaders";
+import { getAllBooks, getBookById } from "./utils/loaders";
 import useMyContext from "./hooks/useMyContext";
 import { useEffect } from "react";
 import { getUserByToken } from "./utils/auth";
+import ProtectedRoute from "./Components/common/ProtectedRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,10 +31,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <DashboardPage />,
+        loader: getAllBooks,
+        element: (
+          <ProtectedRoute>
+            <DashboardPage />
+          </ProtectedRoute>
+        ),
       },
       {
-        path: "/book/:bookId",
+        path: "/books/:bookId",
+        loader: getBookById,
         element: <BookPage />,
       },
       {
