@@ -38,7 +38,7 @@ const BooksGrid = ({ books }) => {
         ? books.map((book) => (
             <div
               key={book._id}
-              className="block h-[200px] max-w-sm p-6 relative overflow-hidden group bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+              className="block h-[200px] max-w-sm max-[500px]:max-w-[90%] p-6 relative overflow-hidden group bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
             >
               <Link
                 to={`/books/${book._id}`}

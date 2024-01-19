@@ -9,7 +9,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-gray-600 h-full rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
-      <div className="p-4 flex justify-between items-center">
+      <div className="p-4 flex justify-between items-center flex-wrap gap-3">
         <div>
           <label
             htmlFor="books"

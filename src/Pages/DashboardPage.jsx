@@ -62,8 +62,8 @@ const DashboardPage = () => {
     }
   };
   return (
-    <div className="bg-gray-600 flex py-6 items-center h-full rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
-      <div className="flex-[1_1_50%] mx-3 h-full">
+    <div className="bg-gray-600 flex py-6 items-center h-full max-[500px]:flex-col rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
+      <div className="flex-[1_1_50%] max-[500px]:w-full mx-3 h-full">
         <h1 className="text-center text-2xl font-semibold">Add Book</h1>
         <div>
           <form
@@ -133,6 +133,8 @@ const DashboardPage = () => {
               name="description"
               required
               value={formState.description}
+              pattern=".{200,}"
+              minLength={200}
               onChange={handleChange}
             />
             <button
@@ -147,8 +149,8 @@ const DashboardPage = () => {
           </form>
         </div>
       </div>
-      <div className=" border border-slate-400/45 h-full rounded-full"></div>
-      <div className="flex-[1_1_50%] mx-3 h-full">
+      <div className=" border border-slate-400/45 max-[500px]:w-[90%] h-full rounded-full"></div>
+      <div className="flex-[1_1_50%] max-[500px]:w-full mx-3 h-full">
         <h1 className="text-center text-2xl font-semibold">Delete Book</h1>
         <div>
           <Suspense

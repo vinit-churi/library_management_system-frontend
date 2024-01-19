@@ -13,14 +13,20 @@ const Navbar = () => {
       <div className="flex justify-between">
         <div className="flex flex-row">
           <Link to="/" className="flex flex-col cursor-pointer">
-            <div className="text-2xl font-bold">Bookstore</div>
-            <div className="text-xs">Your online bookstore</div>
+            <div className="text-2xl max-[400px]:text-xl font-bold">
+              Bookstore
+            </div>
+            <div className="text-xs max-[400px]:hidden">
+              Your online bookstore
+            </div>
           </Link>
         </div>
         {user ? (
           <div className="flex flex-row">
             <div className="flex flex-col cursor-pointer">
-              <div className="text-2xl font-bold">Welcome</div>
+              <div className="text-2xl max-[400px]:text-xl font-bold">
+                Welcome
+              </div>
               <div className="text-xs">{user.username}</div>
             </div>
             <button
