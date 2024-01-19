@@ -6,6 +6,7 @@ import {
   Await,
   useRevalidator,
   useNavigate,
+  Link,
 } from "react-router-dom";
 import BooksGrid from "../Components/common/BooksGrid";
 import useMyContext from "../hooks/useMyContext";
@@ -150,7 +151,14 @@ const DashboardPage = () => {
           </form>
         </div>
       </div>
-      <div className=" border border-slate-400/45 max-[500px]:w-[90%] h-full rounded-full"></div>
+      <div className=" border border-slate-400/45 max-[500px]:w-[90%] max-[500px]:my-16 h-full w-0 rounded-full relative">
+        <Link
+          to="/user-logs"
+          className="top-0 absolute bg-white w-[120px] h-[40px] left-0 translate-x-[-50%] max-[500px]:left-0 max-[500px]:right-0 max-[500px]:translate-x-0 max-[500px]:translate-y-[-50%] mx-auto rounded-full flex items-center justify-center text-lg font-semibold text-slate-500 hover:text-slate-400 transition-all duration-300"
+        >
+          Logs page
+        </Link>
+      </div>
       <div className="flex-[1_1_50%] max-[500px]:w-full mx-3 h-full">
         <h1 className="text-center text-2xl font-semibold">Delete Book</h1>
         <div>
