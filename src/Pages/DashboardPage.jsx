@@ -126,14 +126,15 @@ const DashboardPage = () => {
               onChange={handleChange}
             />
             <label className="mb-2 text-white text-lg font-semibold">
-              Description:
+              Description: (min 200 characters)
             </label>
-            <textarea
-              className="rounded-md h-32 w-full text-white px-2 bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40"
+            <input
+              className="rounded-md pb-32 w-full text-white px-2 bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40"
               name="description"
               required
               value={formState.description}
               pattern=".{200,}"
+              title="200 characters minimum"
               minLength={200}
               onChange={handleChange}
             />
