@@ -5,7 +5,7 @@ const BookPage = () => {
   console.log(data);
   return (
     <div className="flex items-center justify-center h-full w-auto">
-      <div className="p-4 w-[90%] max-w-[500px] rounded-xl bg-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
+      <div className="p-4 w-[90%] max-w-[500px] rounded-xl overflow-hidden bg-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
         {data ? (
           <>
             <p>
