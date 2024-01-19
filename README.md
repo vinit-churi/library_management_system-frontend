@@ -5,6 +5,9 @@ Welcome to the Library App, a frontend repository for a simple yet secure applic
 ## Backend Repository
 [Link to Backend Repository](https://github.com/vinit-churi/library_management_system-backend)
 
+## Video Demonstration (loom video)
+https://www.loom.com/share/378cb29e3f91406ab8a5ebfc8a949cb8?sid=f168b256-16c2-4e8c-83dd-83780383d553
+
 ## Table of Contents
 
 - [Web Interface](#web-interface)
