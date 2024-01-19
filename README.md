@@ -2,6 +2,9 @@
 
 Welcome to the Library App, a simple yet secure application for book management developed using Node.js (Express) for the backend and ReactJS for the frontend. This application features a user-friendly web interface, secure APIs, and role-based access control, ensuring a seamless experience for users.
 
+## The current repo is a frontend repo
+## Backend code link [backend repo](https://github.com/vinit-churi/library_management_system-backend)
+
 ## Table of Contents
 
 - [Web Interface](#web-interface)
@@ -61,6 +64,6 @@ Console warnings and errors are minimized or eliminated to provide a smooth user
 
 ## Submission
 
-To view the code and explore the features, please visit the [GitHub repository](<Your Repository URL>). Feel free to provide feedback and suggestions.
+To view the backend code and explore the features, please visit the backend repo link mentioned above. Feel free to provide feedback and suggestions.
 
 Thank you for considering my submission!
