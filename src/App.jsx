@@ -47,7 +47,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/logs",
+    path: "/user-logs",
     loader: getLogs,
     element: <LogsPage />,
   },
