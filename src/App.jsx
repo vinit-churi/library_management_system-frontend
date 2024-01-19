@@ -44,16 +44,18 @@ const router = createBrowserRouter([
         loader: getBookById,
         element: <BookPage />,
       },
-      {
-        path: "*",
-        element: <div>Not Found</div>,
-      },
     ],
   },
   {
     path: "/logs",
     loader: getLogs,
     element: <LogsPage />,
+  },
+  {
+    path: "*",
+    element: (
+      <div className=" mt-10 uppercase text-center w-full">page not found</div>
+    ),
   },
 ]);
 
