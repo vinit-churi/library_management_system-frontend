@@ -17,7 +17,7 @@ async function fetchAllBooks({ oldBooks, newBooks }) {
   if (oldBooks === "1") {
     url = `${import.meta.env.VITE_BACKEND_HOSTNAME}/books?sort=old`;
   } else if (newBooks === "1") {
-    url = `${import.meta.env.VITE_BACKEND_HOSTNAME}/books?new=new`;
+    url = `${import.meta.env.VITE_BACKEND_HOSTNAME}/books?sort=new`;
   }
   const response = await fetch(url);
   const data = await response.json();

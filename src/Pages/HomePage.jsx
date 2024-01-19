@@ -48,7 +48,7 @@ const HomePage = () => {
       </div>
       <Suspense
         fallback={
-          <p className="text-2xl text-center animate-pulse pt-[100px]">
+          <p className="text-2xl text-center animate-pulse pt-[100px] max-w-[400px] mx-auto">
             Loading the books... (api hosted on free service, so it might take a
             while to load)
           </p>
