@@ -99,3 +99,22 @@ export async function deleteBookById(id) {
     return null;
   }
 }
+
+export async function getLogs() {
+  try {
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_HOSTNAME}/logs`,
+      requestOptions
+    );
+    console.log(response.status);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}

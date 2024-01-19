@@ -5,11 +5,12 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import DashboardPage from "./Pages/DashboardPage";
 import BookPage from "./Pages/BookPage";
-import { getAllBooks, getBookById } from "./utils/loaders";
+import { getAllBooks, getBookById, getLogs } from "./utils/loaders";
 import useMyContext from "./hooks/useMyContext";
 import { useEffect } from "react";
 import { getUserByToken } from "./utils/auth";
 import ProtectedRoute from "./Components/common/ProtectedRoute";
+import LogsPage from "./Pages/LogsPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
         element: <div>Not Found</div>,
       },
     ],
+  },
+  {
+    path: "/logs",
+    loader: getLogs,
+    element: <LogsPage />,
   },
 ]);
 
