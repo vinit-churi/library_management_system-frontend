@@ -20,8 +20,6 @@ async function fetchAllBooks({ oldBooks, newBooks }) {
     url = `${import.meta.env.VITE_BACKEND_HOSTNAME}/books?new=new`;
   }
   const response = await fetch(url);
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  await delay(1000);
   const data = await response.json();
   return data;
 }

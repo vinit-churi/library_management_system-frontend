@@ -41,6 +41,11 @@ const LoginPage = () => {
   return (
     <div className="flex items-center justify-center h-full w-auto">
       <div className="p-4 w-[90%] max-w-[400px] rounded-xl bg-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
+        <div>
+          <h2>admin login credentials for demo</h2>
+          <p>email: vinitchuri0312@gmail.com</p>
+          <p>password: </p>
+        </div>
         <form
           className="flex flex-col mb-4 w-full text-black"
           onSubmit={handleSubmit}
