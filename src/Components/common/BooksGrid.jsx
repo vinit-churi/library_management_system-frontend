@@ -8,28 +8,28 @@ import {
 import useMyContext from "../../hooks/useMyContext";
 import { deleteBookById } from "../../utils/loaders";
 const BooksGrid = ({ books }) => {
-  console.log(books);
+  // console.log(books);
   const location = useLocation();
   let revalidator = useRevalidator();
   const navigate = useNavigate();
   const { setUser } = useMyContext();
   async function deleteBook(id) {
-    console.log("deleteBook", id);
+    // console.log("deleteBook", id);
     try {
-      const { success, data = null, status } = await deleteBookById(id);
-      console.log(success, data, status);
-      console.log(status);
+      const { success, status } = await deleteBookById(id);
+      // console.log(success, data, status);
+      // console.log(status);
       if (status === 401) {
         setUser(null);
         localStorage.removeItem("token");
         navigate("/login");
       }
       if (success) {
-        console.log("Book deleted successfully", data);
+        // console.log("Book deleted successfully", data);
         revalidator.revalidate();
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
   return (

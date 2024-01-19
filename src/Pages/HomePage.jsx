@@ -21,7 +21,7 @@ const HomePage = () => {
             id="books"
             defaultValue={""}
             onChange={(e) => {
-              console.log(e.target.value);
+              // console.log(e.target.value);
               if (e.target.value === "new") {
                 navigate("/?new=1");
               } else if (e.target.value === "old") {

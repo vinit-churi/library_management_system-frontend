@@ -29,7 +29,7 @@ export async function registerUser(userData, callback) {
     callback(user);
     localStorage.setItem("token", token);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 
@@ -61,13 +61,13 @@ export async function loginUser(userData, callback) {
     localStorage.setItem("token", token);
     return { success: true };
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return { success: false };
   }
 }
 
 export async function getUserByToken(callback) {
-  console.log("getUserByToken called");
+  // console.log("getUserByToken called");
   try {
     const myHeaders = new Headers();
     const token = localStorage.getItem("token");
@@ -96,6 +96,6 @@ export async function getUserByToken(callback) {
       callback(null);
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }

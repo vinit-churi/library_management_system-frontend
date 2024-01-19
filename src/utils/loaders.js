@@ -1,10 +1,8 @@
 import { defer } from "react-router-dom";
-export const getAllBooks = async ({ params, request }) => {
-  console.log(params, request);
+export const getAllBooks = async ({ request }) => {
   const url = new URL(request.url);
   const oldBooks = url.searchParams.get("old");
   const newBooks = url.searchParams.get("new");
-  console.log("look here", oldBooks, newBooks);
 
   const data = fetchAllBooks({ oldBooks, newBooks });
   return defer({
@@ -42,7 +40,6 @@ export async function createBook(bookData) {
       requestOptions
     );
     if (response.status === 400) {
-      console.log("re login required");
       return { success: false, status: response.status };
     }
     if (response.status !== 200) {
@@ -51,13 +48,11 @@ export async function createBook(bookData) {
     const data = await response.json();
     return { success: true, data };
   } catch (error) {
-    console.log(error);
     return null;
   }
 }
 
 export const getBookById = async ({ params }) => {
-  console.log(params);
   try {
     const response = await fetch(
       `${import.meta.env.VITE_BACKEND_HOSTNAME}/books/${params.bookId}`
@@ -68,7 +63,6 @@ export const getBookById = async ({ params }) => {
     const data = await response.json();
     return { success: true, data };
   } catch (error) {
-    console.log(error);
     return null;
   }
 };
@@ -93,7 +87,6 @@ export async function deleteBookById(id) {
     const data = await response.json();
     return { success: true, data, status: response.status };
   } catch (error) {
-    console.log(error);
     return null;
   }
 }
@@ -108,11 +101,9 @@ export async function getLogs() {
       `${import.meta.env.VITE_BACKEND_HOSTNAME}/logs`,
       requestOptions
     );
-    console.log(response.status);
     const result = await response.json();
     return result;
   } catch (error) {
-    console.log(error);
     return null;
   }
 }

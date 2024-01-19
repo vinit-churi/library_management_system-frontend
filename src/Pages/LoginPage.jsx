@@ -13,8 +13,8 @@ const LoginPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    // console.log("Email:", email);
+    // console.log("Password:", password);
     // Handle form submission here
     try {
       setSubmitting(true);
@@ -25,12 +25,12 @@ const LoginPage = () => {
         },
         setUser
       );
-      console.log("what's the result?", success);
+      // console.log("what's the result?", success);
       if (success) {
         navigate("/");
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     } finally {
       setEmail("");
       setPassword("");

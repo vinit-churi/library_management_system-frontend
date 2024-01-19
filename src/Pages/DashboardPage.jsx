@@ -33,22 +33,22 @@ const DashboardPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    // console.log(formState);
     setSubmitting(true);
     try {
-      const { success, data = null, status } = await createBook(formState);
-      console.log(status);
+      const { success, status } = await createBook(formState);
+      // console.log(status);
       if (status === 401) {
         setUser(null);
         localStorage.removeItem("token");
         navigate("/login");
       }
       if (success) {
-        console.log("Book created successfully", data);
+        // console.log("Book created successfully", data);
         revalidator.revalidate();
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     } finally {
       setFormState({
         title: "",

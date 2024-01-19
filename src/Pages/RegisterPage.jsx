@@ -35,7 +35,7 @@ const RegisterPage = () => {
       );
       navigate("/");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     } finally {
       setFirstName("");
       setLastName("");

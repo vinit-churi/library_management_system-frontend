@@ -3,7 +3,7 @@ import { JsonToTable } from "react-json-to-table";
 
 const LogsPage = () => {
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <JsonToTable json={data} />
