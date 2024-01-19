@@ -42,9 +42,29 @@ const LoginPage = () => {
     <div className="flex items-center justify-center h-full w-auto">
       <div className="p-4 w-[90%] max-w-[400px] rounded-xl bg-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
         <div>
-          <h2>admin login credentials for demo</h2>
-          <p>email: vinitchuri0312@gmail.com</p>
-          <p>password: </p>
+          <h2 className="font-bold text-yellow-300 uppercase">
+            admin login credentials for demo
+          </h2>
+          <table className=" w-full p-2">
+            <thead>
+              <tr>
+                <th className="text-center w-[60%] border border-white">
+                  email
+                </th>
+                <th className="border border-white">password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-white text-center">
+                  <p>vinitchuri0312@gmail.com</p>
+                </td>
+                <td className="text-center border border-white">
+                  <p>123456</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <form
           className="flex flex-col mb-4 w-full text-black"
